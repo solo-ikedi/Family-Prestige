@@ -1,0 +1,311 @@
+/* General Body & HTML Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: #f7f7f7; /* Light grey background for the body */
+    color: #333333; /* Dark grey text for readability */
+}
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: backgroundChange 10s infinite; /* Background Image Change Animation */
+    object-fit: cover;
+}
+
+/* Overlay for text readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+}
+
+/* Content within the Hero Section */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    opacity: 0; /* Make sure content is hidden initially */
+    animation: fadeIn 2s ease-in-out forwards, slideUp 1s ease-out forwards; /* Animations for fade-in and sliding effect */
+}
+
+/* Hero Heading */
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: slideInLeft 1s ease-out forwards 0.5s; /* Add delay to allow overlay and other content to show first */
+}
+
+/* Hero Subtext */
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slideInRight 1s ease-out forwards 1s; /* Add delay to allow heading to show first */
+}
+
+/* Buttons under the Hero Section */
+.hero-buttons {
+    opacity: 0;
+    animation: fadeInUp 2s ease-in-out forwards 1.5s; /* Delay for buttons */
+}
+
+.hero-buttons button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.hero-buttons button:hover {
+    background-color: #003d80; /* Darker blue on hover */
+}
+
+
+
+/* Navbar Styling */
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000; /* Black text */
+}
+
+.navbar-brand span {
+    margin-left: 10px;
+}
+
+.nav-link {
+    color: #333; /* Dark gray links */
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    color: #007bff; /* Blue on hover */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Blue button */
+    border: none;
+    padding: 8px 16px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Top Bar Styling */
+.top-bar {
+    background-color: #003366; /* Dark blue background */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    font-size: 14px;
+}
+
+.top-bar a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin: 0 5px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.social-icons a:hover {
+    color: #ddd; /* Slightly lighter on hover */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #343a40; /* Dark grey footer background */
+    color: white;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer h5 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+footer ul li a:hover {
+    color: #007bff; /* Blue on hover */
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #007bff; /* Blue on hover */
+}
+
+footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col-md-4 {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px 0;
+}
+
+footer .col-12 {
+    width: 100%;
+    text-align: center;
+}
+
+/* Text Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; visibility: hidden; }
+    100% { opacity: 1; visibility: visible; }
+}
+
+@keyframes slideInLeft {
+    0% { transform: translateX(-100%); opacity: 0; visibility: hidden; }
+    100% { transform: translateX(0); opacity: 1; visibility: visible; }
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(100%); opacity: 0; visibility: hidden; }
+    100% { transform: translateX(0); opacity: 1; visibility: visible; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(100%); opacity: 0; visibility: hidden; }
+    100% { transform: translateY(0); opacity: 1; visibility: visible; }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); visibility: hidden; }
+    100% { opacity: 1; transform: translateY(0); visibility: visible; }
+}
+
+/* Miscellaneous */
+.text-center {
+    color: #0056b3;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.1s ease;
+}
+
+h5 {
+    text-align: center;
+}
+
+/* Success and Error Messages */
+#success-message {
+    background-color: #28a745; /* Green for success */
+    color: white;
+}
+
+#error-message {
+    background-color: #dc3545; /* Red for error */
+    color: white;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    /* Adjust Hero Section Content for Smaller Screens */
+    .hero-content {
+        top: 40%; /* Move content up a little */
+        font-size: 1.5rem; /* Smaller text size */
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; /* Smaller heading */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Smaller paragraph */
+    }
+
+    .hero-buttons button {
+        padding: 8px 15px;
+        font-size: 0.9rem; /* Smaller buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust Hero Section Content for Extra Small Screens */
+    .hero-content {
+        top: 35%; /* Adjust vertical alignment */
+        font-size: 1rem; /* Further reduce text size */
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem; /* Further reduce heading size */
+    }
+
+    .hero-content p {
+        font-size: 0.9rem; /* Further reduce paragraph size */
+    }
+
+    .hero-buttons button {
+        padding: 8px 12px;
+        font-size: 0.8rem; /* Smaller buttons */
+    }
+}
